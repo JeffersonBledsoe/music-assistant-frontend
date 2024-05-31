@@ -104,9 +104,11 @@
             <span v-if="item.disc_number">{{ item.disc_number }}/</span
             >{{ item.track_number || item.position }}
           </v-item>
-          <v-item v-if="getBreakpointValue('bp3')">
-            <FavouriteButton :item="item" />
-          </v-item>
+          <div class="d-none d-sm-block">
+            <v-item>
+              <FavouriteButton :item="item" />
+            </v-item>
+          </div>
         </v-item-group>
         <v-spacer />
         <MAButton
@@ -140,7 +142,6 @@ import {
 } from '@/helpers/utils';
 import { itemIsAvailable } from '@/plugins/api/helpers';
 import { iconHiRes } from './QualityDetailsBtn.vue';
-import { getBreakpointValue } from '@/plugins/breakpoint';
 import FavouriteButton from '@/components/FavoriteButton.vue';
 
 // properties
